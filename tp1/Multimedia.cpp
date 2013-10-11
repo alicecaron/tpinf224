@@ -34,7 +34,8 @@ void Multimedia::setPath(string _path) {
 }
 
 void Multimedia::display() const {
-    cout << nom<<" "<<date<<" "<<path<<endl;
+    cout <<"================================================"<<endl
+        <<nom<<" "<<date<<" "<<path<<endl;
 }
 
 Multimedia::~Multimedia(){}
