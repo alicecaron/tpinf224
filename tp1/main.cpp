@@ -14,13 +14,15 @@ int main(){
     Image* im1 = new Image();
     Image* im2 = new Image("fichier.gif",0,"/user/acaron/image","Paris");
 
-    //m1->display();
-    //m2->display();
-    //v1->display();
-    //v2->display();
-    //im1->display();
-    //im2->display();
-
+//*
+    m1->display();
+    m2->display();
+    v1->display();
+    v2->display();
+    im1->display();
+    im2->display();
+//*/
+/*
     Multimedia* tableauDeMultimedias[10];
     unsigned int count = 0;
 
@@ -33,7 +35,8 @@ int main(){
         tableauDeMultimedias[i]->display();
     }
 
-
+//*/
+//*
     delete m1;
     m1 = NULL;
     delete m2;
@@ -49,6 +52,6 @@ int main(){
     delete im2;
     im2 = NULL;
 
-
+//*/
 
 }
