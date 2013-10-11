@@ -23,7 +23,7 @@ void Video::setDuree(float _duree){
 }
 
 void Video::display() const{
-    Video::display();
+    Multimedia::display();
     cout<<"Duree: "<<duree<<endl;
 }
 
