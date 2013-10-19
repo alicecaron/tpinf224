@@ -49,6 +49,11 @@ public:
      */
     virtual void display() const;
     /**
+     * Utiliser un player pour chaque multimédia approprié
+     */
+    virtual void play() const=0;
+
+    /**
      * Destructeur de l'objet Multimédia
      */
     virtual ~Multimedia();

@@ -1,6 +1,8 @@
 #include "Video.h"
 #include "Multimedia.h"
 #include<iostream>
+#include<string.h>
+#include<stdlib.h>
 using namespace std;
 
 
@@ -25,6 +27,19 @@ void Video::setDuree(float _duree){
 void Video::display() const{
     Multimedia::display();
     cout<<"Duree: "<<duree<<endl;
+}
+
+void Video::play() const{
+    string path=Multimedia::getPath().c_str();
+    int length = path.length();
+    char command[length+6];
+    strcpy (command,"vlc ");
+    strcat (command,path.c_str());
+    strcat (command," &");
+
+    cout <<command;
+    cout<<endl;
+    system(command);
 }
 
 Video::~Video(){}

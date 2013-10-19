@@ -1,6 +1,8 @@
 #include "Image.h"
 #include "Multimedia.h"
 #include<iostream>
+#include<string.h>
+#include<stdlib.h>
 using namespace std;
 
 Image::Image():
@@ -23,6 +25,18 @@ void Image::setLieu(string _lieu){
 void Image::display() const {
     Multimedia::display();
     cout<<"Lieu: "<<lieu<<endl;
+}
+void Image::play()const{
+    string path=Multimedia::getPath().c_str();
+    int length = path.length();
+    char command[length+10];
+    strcpy (command,"display ");
+    strcat (command,path.c_str());
+    strcat (command," &");
+
+    cout <<command;
+    cout<<endl;
+    system(command);
 }
 
 Image::~Image(){}

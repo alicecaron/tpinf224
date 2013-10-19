@@ -22,6 +22,7 @@ public:
      */
     virtual void setDuree(float _duree);
     virtual void display() const;
+    virtual void play()const;
     virtual ~Video();
 };
 

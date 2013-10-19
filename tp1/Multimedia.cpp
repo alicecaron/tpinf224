@@ -2,9 +2,9 @@
 #include<iostream>
 
 Multimedia::Multimedia(){
-    nom="fichier.ext";
+    nom="Filename";
     date=0;
-    path="/user/acaron/multimedia";
+    path="/user/acaron/multimedia/file.ext";
 }
 
 Multimedia::Multimedia(string _nom,int _date, string _path):nom(_nom),date(_date),path(_path){}
@@ -37,6 +37,7 @@ void Multimedia::display() const {
     cout <<"================================================"<<endl
         <<nom<<" "<<date<<" "<<path<<endl;
 }
+
 
 Multimedia::~Multimedia(){}
 

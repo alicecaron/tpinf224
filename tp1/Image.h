@@ -23,6 +23,7 @@ public:
      */
     virtual void setLieu(string _lieu);
     virtual void display() const;
+    virtual void play()const;
     virtual ~Image();
 };
 

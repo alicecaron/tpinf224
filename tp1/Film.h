@@ -7,15 +7,15 @@ class Film: public Video
 {
 
 private:
-    int* dureeChapitres;
+    int* chapitres;
     unsigned int nbChapitres;
-    int adresse;
 public:
     Film();
     Film(string _nom,int _date,string _path,float _duree);
-    virtual int* getDureeChapitres() const;
-    virtual void setDureeChapitres(int _dureeChapitres[],unsigned int _nbChapitres);
+    virtual const int* getChapitres() const;
+    virtual void setChapitres(const int _chapitres[],unsigned int _nbChapitres);
     virtual void display() const;
+    //virtual void play()const;
     virtual ~Film();
 };
 
