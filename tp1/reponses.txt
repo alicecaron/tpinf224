@@ -1,0 +1,47 @@
+QUESTION 5:
+**Quelle est la propriété caractéristique de l'Orienté Objet qui permet de faire cela ?
+Ici, deux classes (Image et Video) héritent de la classe multimédia. Elles peuvent donc utiliser les memes nom de méthode,mais selon la classe, le traitement effectué sera différent.
+Ceci est du à la propriété d'héritage depuis la classe mère (Multimedia), et au mot clef virtual qui permet de redéfinir dynamiquement la bonne fonction à exécuter.
+Le polymorphisme permet d'utiliser dans un tableau par exemple, des objets multimédia, en appelant les memes noms de fonction quelque soit l'objet instancié (une Image ou une Video)
+
+**Qu'est-il spécifiquement nécessaire de faire pour que cela marche dans le cas du C++ ?
+En C++ il faut spécifier le mot clef virtual devant les méthodes des classes filles qui ont le meme nom que la classe mère. Sinon c'est la définition de cette fonction dans la classe mère qui sera utilisée.
+
+**Quel est le type des éléments du tableau : est-ce que ce tableau contient les objets ou des pointeurs vers ces objets ? Pourquoi ? Comparer à Java.
+Les éléments du tableau sont des pointeurs vers des instances des classes Image et Video
+Le tableau est un tableau de pointeurs car les objets vers lesquels ils pointent n'ont pas de longueur fixe connue à l'avance.
+En java la déclaration d'un objet est directement interprétée comme un pointeur vers cet objet, contrairement au C++.
+
+QUESTOIN 6:
+**Compte tenu de ce qui précède, que faut-il faire dans ce cas pour être sûr que la gestion mémoire soit valide, c'est-à-dire qu'il ne puisse pas y avoir de pointeur pendant ni de fuites mémoire ?
+Pour éviter d'avoir des pointeurs pendants et fuites mémoires, il faut faire une copie des éléments du tableau passé en paramètre dans un nouveau tableau de pointeurs qui sera alloué dynamiquement lors de l'appel de la fonction setChapitres().
+Ainsi, si le tableau est modifié ou supprimer, cela n'affectera pas le nouveau tableau dans lequel on a fait la copie au préalable.
+
+QUESTION 7:
+**Contrairement à Java ou C#, C/C++ ne gère pas la mémoire dynamique automatiquement (*) : comme il n'y a pas de ramasse miettes, tout ce qui a été créé avec new doit être détruit avec delete sinon on aura des fuites mémoires.
+**Parmi les classes précédemment écrites quelles sont celles qu'il faut modifier et comment afin qu'il n'y ait pas de fuite mémoire quand on détruit leurs instances ?
+Il faut modifier la classe Film. En effet, un Film possède comme variable de classe un tableau de pointeurs. Ainsi, quand on supprime un Film avec delete, il faut aussi supprimer avec delete son tableau de pointeurs.
+Il faut donc modifier la classe Film en lui ajoutant un delete de son tableau de pointeurs dans le destructeur de la classe Film qui sera appelé en premier lors du delet du Film.
+
+**De même, la copie d'objets peut poser problème dans certains cas. Quelle(s) classe(s) sont concernées parmi celles déjà écrites et que faut-il faire ?
+Dans la classe Film, la méthode qui permet de remplir le tableau de chapitres effectue une copie des éléments du tableau passé en paramètre dans un tableau de pointeurs.
+A chaque appel de cette fonction de remplissage du tableau des durées des chapitres il faut donc faire un delete du tableau de pointeurs car on ne connait pas à l'avance la taille du nouveau tableau.
+
+QUESTION 8:
+**Pour chaque classe, ajouter une méthode play() (ou similaire) permettant, selon le cas, d'afficher la photo ou de jouer la vidéo ou le film (voir la note ci-dessous).
+**L'implémentation de cette méthode n'a pas vraiment de sens au niveau de la classe de base mais elle doit par contre y être déclarée afin de permettre un appel polymorphique de la méthode play() sur la hiérarchie de classes.
+**Comment faut-il déclarer cette méthode dans la classe de base ?
+**Quelle conséquence cela aura sur l'instantiation d'objets de cette classe et pourquoi?
+
+Dans la classe de base (Multimedia) on déclare cette fonction comme fonction virtuelle pure. Car on ne peut pas préciser quel logiciel sera utilisé pour un multimédia tout court, étant donné qu'on ne sait pas si ca sera une Image ou une Vidéo par exemple.
+Par conséquent, la classe multimedia devient une classe abstraite, donc non instanciable. Elle contient au moins une fonction virtuelle pure.
+
+
+QUESTION 9:
+**La première stratégie nécessite de définir des méthodes dans la classe groupe pour gérer la liste.
+La seconde stratégie évite ce travail car elle permet d'hériter des méthodes de list.
+Elle est donc plus rapide à implémenter mais offre moins de contrôle (on ne choisit pas les noms de méthodes comme on veut, on hérite de
+toutes les méthodes de list y compris certaines qui sont peut-être inutile ou pas souhaitables, etc.)
+On rappelle aussi que dans les 2 cas, la liste d'objets doit en fait être une liste de pointeurs d'objets. Pourquoi ? Comparer à Java.
+
+

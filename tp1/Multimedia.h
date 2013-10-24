@@ -23,15 +23,15 @@ public:
     /**
      * Récupérer le nom du fichier multimédia
      */
-    virtual string getNom() const;
+    const virtual string getNom() const;
     /**
      * Récupérer le chemin du fichier multimédia
      */
-    virtual string getPath() const;
+    const virtual string getPath() const;
     /**
      * Récupérer la date du fichier multimédia
      */
-    virtual int getDate() const;
+    const virtual int getDate() const;
     /**
      * Modifier le nom du fichier multimédia
      */

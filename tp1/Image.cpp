@@ -14,7 +14,7 @@ Image::Image(string _nom,int _date,string _path,string _lieu):
     Multimedia(_nom,_date,_path){
     lieu=_lieu;
 }
-string Image::getLieu() const{
+const string Image::getLieu() const{
     return lieu;
 }
 
@@ -27,16 +27,10 @@ void Image::display() const {
     cout<<"Lieu: "<<lieu<<endl;
 }
 void Image::play()const{
-    string path=Multimedia::getPath().c_str();
-    int length = path.length();
-    char command[length+10];
-    strcpy (command,"display ");
-    strcat (command,path.c_str());
-    strcat (command," &");
-
+    string command="display "+Multimedia::getPath()+" &";
     cout <<command;
     cout<<endl;
-    system(command);
+    system(command.c_str());
 }
 
 Image::~Image(){}

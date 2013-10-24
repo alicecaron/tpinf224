@@ -16,7 +16,7 @@ Video::Video(string _nom,int _date, string _path,float _duree):
     duree=_duree;
 }
 
-float Video::getDuree() const{
+const float Video::getDuree() const{
     return duree;
 }
 
@@ -30,16 +30,10 @@ void Video::display() const{
 }
 
 void Video::play() const{
-    string path=Multimedia::getPath().c_str();
-    int length = path.length();
-    char command[length+6];
-    strcpy (command,"vlc ");
-    strcat (command,path.c_str());
-    strcat (command," &");
-
+    string command="vlc "+Multimedia::getPath()+" &";
     cout <<command;
     cout<<endl;
-    system(command);
+    system(command.c_str());
 }
 
 Video::~Video(){}

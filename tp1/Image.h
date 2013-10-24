@@ -15,7 +15,7 @@ public:
     /**
      * Récupération du lieu de la photo
      */
-    virtual string getLieu() const;
+    const virtual string getLieu() const;
     /**
      * @brief setLieu
      * @param _lieu

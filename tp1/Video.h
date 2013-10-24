@@ -14,7 +14,7 @@ public:
      * @return
      * Récupérer la durée de la vidéo
      */
-    virtual float getDuree() const;
+    const virtual float getDuree() const;
     /**
      * @brief setDuree
      * @param _duree

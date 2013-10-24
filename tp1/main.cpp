@@ -2,12 +2,13 @@
 #include"Video.h"
 #include"Image.h"
 #include"Film.h"
+#include"Groupe.h"
 #include<iostream>
 using namespace std;
 
 int main(){
 
-    //il n'est plu possible de créer m1 et m2 puisque Multimédia est devenue une classe abstraite à partir de la question8
+    //il n'est plus possible de créer m1 et m2 puisque Multimédia est devenue une classe abstraite à partir de la question8
     //Multimedia* m1 = new Multimedia();
     //Multimedia* m2 = new Multimedia("fichier.mp3",0,"/user/acaron/musique");
 
@@ -49,11 +50,7 @@ int main(){
     Film* film2=new Film("Madagascar",2645896,"/home/alice/TPT/A2/INF224/tp/nrd-mouleetbill.mkv2",150);
     Film* film3=new Film("Bolt",324564896,"/home/alice/TPT/A2/INF224/tp/nrd-mouleetbill.mkv",180);
 
-    film1->display();
     film1->setChapitres(chapitresF1,5);
-    film1->display();
-
-    film1->setChapitres(chapitresF12,8);
     film1->display();
 
     film1->setChapitres(chapitresF13,4);
@@ -62,32 +59,16 @@ int main(){
     film2->setChapitres(chapitresF1,5);
     film3->setChapitres(chapitresF12,8);
 
-
-/*
-    cout<<endl<<"Tests avec les pointeurs:"<<endl;
-    //renvoie l'adresse vers quoi pointe le tableau (car c'est un pointeur)    film1->getDureeChapitres()
-    cout<<film1->getDureeChapitres()<<endl;
-    //renvoie la valeur vers quoi pointe    film1->getDureeChapitres()
-    cout<<*film1->getDureeChapitres()<<endl;//10
-    //idem
-    cout<<film1->getDureeChapitres()[0]<<endl;//10
-    //renvoie la 2eme valeur vers quoi pointe   film1->getDureeChapitres()
-    cout<<film1->getDureeChapitres()[1]<<endl;//12
-    film1->display();
-//*/
-
-
-
     film1->display();
     film2->display();
     film3->display();
 
-    //film1->play();
-    //film2->play();
-    film3->play();
+    //film3->play();
     im2->play();
-    //v2->play();
+    v2->play();
 
+    Groupe *g1=new Groupe();
+    g1->display();
 
 //*/
 

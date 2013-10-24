@@ -9,15 +9,15 @@ Multimedia::Multimedia(){
 
 Multimedia::Multimedia(string _nom,int _date, string _path):nom(_nom),date(_date),path(_path){}
 
-string Multimedia::getNom() const {
+const string Multimedia::getNom() const {
     return nom;
 }
 
-string Multimedia::getPath() const {
+const string Multimedia::getPath() const {
     return path;
 }
 
-int Multimedia::getDate() const  {
+const int Multimedia::getDate() const  {
     return date;
 }
 
