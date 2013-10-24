@@ -31,8 +31,7 @@ void Video::display() const{
 
 void Video::play() const{
     string command="vlc "+Multimedia::getPath()+" &";
-    cout <<command;
-    cout<<endl;
+    //cout <<command<<endl;
     system(command.c_str());
 }
 

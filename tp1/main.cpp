@@ -13,10 +13,10 @@ int main(){
     //Multimedia* m2 = new Multimedia("fichier.mp3",0,"/user/acaron/musique");
 
     Video* v1 = new Video();
-    Video* v2 = new Video("Boule et Bill",0,"/home/alice/TPT/A2/INF224/tp/nrd-mouleetbill.mkv",31.6);
+    Video* v2 = new Video("Boule et Bill",0,"/home/alice/TPT/A2/INF224/nrd-mouleetbill.mkv",31.6);
 
     Image* im1 = new Image();
-    Image* im2 = new Image("Linux pingouin",0,"/home/alice/TPT/A2/INF224/tp/linux.jpg","Paris");
+    Image* im2 = new Image("Linux pingouin",0,"/home/alice/TPT/A2/INF224/linux.jpg","Paris");
 
 /*
     m1->display();
@@ -46,9 +46,9 @@ int main(){
 
 
 //*
-    Film* film1=new Film("Ratatouille",1564896,"/home/alice/TPT/A2/INF224/tp/nrd-mouleetbill.mkv",120);
-    Film* film2=new Film("Madagascar",2645896,"/home/alice/TPT/A2/INF224/tp/nrd-mouleetbill.mkv2",150);
-    Film* film3=new Film("Bolt",324564896,"/home/alice/TPT/A2/INF224/tp/nrd-mouleetbill.mkv",180);
+    Film* film1=new Film("Ratatouille",1564896,"/home/alice/TPT/A2/INF224/nrd-mouleetbill.mkv",120);
+    Film* film2=new Film("Madagascar",2645896,"/home/alice/TPT/A2/INF224/nrd-mouleetbill.mkv2",150);
+    Film* film3=new Film("Bolt",324564896,"/home/alice/TPT/A2/INF224/nrd-mouleetbill.mkv",180);
 
     film1->setChapitres(chapitresF1,5);
     film1->display();

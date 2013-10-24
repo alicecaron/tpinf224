@@ -28,8 +28,7 @@ void Image::display() const {
 }
 void Image::play()const{
     string command="display "+Multimedia::getPath()+" &";
-    cout <<command;
-    cout<<endl;
+    //cout <<command<<endl;
     system(command.c_str());
 }
 
