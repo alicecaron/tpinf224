@@ -64,11 +64,16 @@ int main(){
     film3->display();
 
     //film3->play();
-    im2->play();
-    v2->play();
+    //im2->play();
+    //v2->play();
 
     Groupe *g1=new Groupe();
+    g1->addList(film1);
+    g1->addList(film2);
+    g1->addList(film1);
     g1->display();
+    //g1->getList();
+
 
 //*/
 
