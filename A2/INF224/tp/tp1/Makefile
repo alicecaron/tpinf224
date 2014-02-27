@@ -8,7 +8,7 @@
 PROG=myprog
 
 # Fichiers sources (NE PAS METTRE les .h mais seulement les .cpp)
-SOURCES=main.cpp Multimedia.cpp Video.cpp Image.cpp Film.cpp Groupe.cpp
+SOURCES=main.cpp Multimedia.cpp Video.cpp Image.cpp Film.cpp Groupe.cpp Index.cpp
 
 # Fichiers objets (ne pas modifier, sauf si l'extension n'est pas .cpp)
 OBJETS=${SOURCES:%.cpp=%.o}
@@ -29,8 +29,7 @@ LDFLAGS=
 
 # Librairies a utiliser
 # Exemple pour Qt : LDLIBS = -L/usr/local/qt/lib -lqt
-LDLIBS= 
-
+LDLIBS= -lpthread
 
 ##########################################
 

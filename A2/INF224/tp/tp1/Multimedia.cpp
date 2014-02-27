@@ -1,13 +1,13 @@
 #include "Multimedia.h"
 #include<iostream>
 
-Multimedia::Multimedia(){
-    nom="Filename";
-    date=0;
-    path="/user/acaron/multimedia/file.ext";
+Multimedia::Multimedia(): nom("Filename"), date(0), path("/cal/homes/acaron/inf224/file.txt"){
+    //path="/user/acaron/multimedia/file.txt";
 }
 
-Multimedia::Multimedia(string _nom,int _date, string _path):nom(_nom),date(_date),path(_path){}
+Multimedia::Multimedia(string _nom,int _date, string _path):nom(_nom),date(_date),path(_path){
+
+}
 
 const string Multimedia::getNom() const {
     return nom;
@@ -34,10 +34,16 @@ void Multimedia::setPath(string _path) {
 }
 
 void Multimedia::display() const {
-    cout <<"================================================"<<endl
-        <<nom<<" "<<date<<" "<<path<<endl;
+    cout <<"____________________________________________________________"
+        <<endl
+        <<nom
+        <<" "
+        <<date
+        <<" "
+        <<path
+        <<" ";
+        //<<endl;
 }
 
-
-Multimedia::~Multimedia(){}
+Multimedia::~Multimedia(){cout<<"Destruction de l'objet "<<nom<<endl;}
 
